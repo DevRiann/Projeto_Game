@@ -2,21 +2,19 @@ package Game;
 
 import java.util.Random;
 
-public class Calcular extends Operacao
+public class Calcular
 {
     private int dificuldade;
     private int valor1;
     private int valor2;
     private int resultado;
-
-    Random rand = new Random();
-
-
+    private int operacao;
 
     public Calcular(int dificuldade)
     {
-        super(dificuldade);
+        Random rand = new Random();
         this.dificuldade = dificuldade;
+        this.operacao = rand.nextInt(3);
 
 
         if (dificuldade == 1)
@@ -64,8 +62,9 @@ public class Calcular extends Operacao
     {
         return valor2;
     }
-
-
+    public int getOperacao() {
+        return operacao;
+    }
     public int getResultado()
     {
         return resultado;
