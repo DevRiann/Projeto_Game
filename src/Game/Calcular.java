@@ -14,7 +14,7 @@ public class Calcular
     {
         Random rand = new Random();
         this.dificuldade = dificuldade;
-        this.operacao = rand.nextInt(3);
+        this.operacao = rand.nextInt(4);
 
 
         if (dificuldade == 1)
@@ -46,7 +46,24 @@ public class Calcular
 
     public String toString()
     {
-        return "Dificuldade: "+getDificuldade()+"\nValor 1: "+getValor1()+"\nValor 2: "+getValor2()+"\nOperacao: "+getOperacao();
+        switch (this.getOperacao())
+        {
+            case 0:
+                System.out.println("Operação: Somar");
+                break;
+            case 1:
+                System.out.println("Operação: Subtrair");
+                break;
+            case 2:
+                System.out.println("Operação: Multiplicar");
+                break;
+            case 3:
+                System.out.println("Operação: Dividir");
+                break;
+
+        }
+
+        return "Dificuldade: "+getDificuldade()+"\nValor 1: "+getValor1()+"\nValor 2: "+getValor2();
 
     }
 
